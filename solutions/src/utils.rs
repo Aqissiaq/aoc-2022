@@ -16,3 +16,8 @@ pub fn read_file(path: &String) -> String {
 
     return contents;
 }
+
+pub fn get_column<'a, T>(arr: &'a Vec<Vec<T>>, idx: usize) -> Vec<&'a T> {
+    arr.iter().map(|row| &row[idx]).collect()
+}
+
